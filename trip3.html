@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>廈門 × 漳州｜五日遊行程</title>
+  <meta name="description" content="廈門與漳州五日遊：城市漫步、古城文化與在地美食" />
+  <style>
+    :root{
+      --ink:#0F172A;
+      --bg:#FFF9F2;
+      --card:#FFFFFF;
+      --muted:#64748B;
+      --primary:#FF4D6D;   /* 甜桃紅 */
+      --secondary:#7C3AED; /* 紫蘿蘭 */
+      --accent:#22C55E;    /* 薄荷綠 */
+      --sun:#FBBF24;       /* 日光黃 */
+      --sea:#38BDF8;       /* 海藍 */
+      --border:rgba(15,23,42,.10);
+
+      --shadow: 0 14px 40px rgba(15,23,42,.10);
+      --radius: 18px;
+      --radius-sm: 14px;
+      --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+              "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+    }
+
+    /* Dark mode */
+    [data-theme="dark"]{
+      --ink:#E8EEFF;
+      --bg:#0B1020;
+      --card:#0F1730;
+      --muted:#A6B0CF;
+      --border:rgba(232,238,255,.12);
+      --shadow: 0 18px 55px rgba(0,0,0,.45);
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--ink);
+      background:
+        radial-gradient(900px 500px at 10% -10%, rgba(255,77,109,.18), transparent 60%),
+        radial-gradient(900px 500px at 95% 0%, rgba(56,189,248,.18), transparent 60%),
+        radial-gradient(900px 500px at 20% 105%, rgba(34,197,94,.14), transparent 55%),
+        var(--bg);
+      line-height:1.6;
+    }
+
+    a{color:inherit}
+    .container{max-width:1080px;margin:0 auto;padding:24px}
+    .topbar{
+      position:sticky; top:0; z-index:30;
+      backdrop-filter:saturate(160%) blur(10px);
+      background: color-mix(in srgb, var(--bg) 78%, transparent);
+      border-bottom:1px solid var(--border);
+    }
+    .topbar-inner{
+      max-width:1080px;margin:0 auto;
+      padding:14px 24px;
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px;
+    }
+    .logo{
+      width:34px;height:34px;border-radius:12px;
+      background: conic-gradient(from 210deg, var(--primary), var(--sun), var(--accent), var(--sea), var(--secondary), var(--primary));
+      box-shadow: 0 10px 30px rgba(255,77,109,.18);
+    }
+
+    .pill{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 12px;border-radius:999px;
+      border:1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 92%, transparent);
+      box-shadow: 0 10px 25px rgba(15,23,42,.06);
+      font-weight:650;
+      cursor:pointer;
+      user-select:none;
+    }
+    .pill small{opacity:.85;font-weight:650}
+    .row{display:flex;gap:16px;flex-wrap:wrap}
+    .hero{
+      margin-top:18px;
+      border-radius: calc(var(--radius) + 10px);
+      background: linear-gradient(135deg,
+        color-mix(in srgb, var(--primary) 18%, transparent),
+        color-mix(in srgb, var(--sea) 16%, transparent) 45%,
+        color-mix(in srgb, var(--accent) 14%, transparent)
+      );
+      border:1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .hero-inner{
+      padding:28px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:20px;
+      align-items:stretch;
+    }
+    @media (max-width: 860px){
+      .hero-inner{grid-template-columns:1fr}
+    }
+
+    h1{margin:0;font-size:34px;line-height:1.15}
+    .sub{margin-top:10px;color:var(--muted);font-weight:600}
+    .badgebar{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .badge{
+      padding:8px 10px;border-radius:999px;
+      border:1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 92%, transparent);
+      font-weight:700;
+      display:inline-flex;align-items:center;gap:8px;
+    }
+    .dot{width:10px;height:10px;border-radius:99px;background:var(--primary)}
+    .dot.sun{background:var(--sun)}
+    .dot.sea{background:var(--sea)}
+    .dot.acc{background:var(--accent)}
+    .dot.sec{background:var(--secondary)}
+
+    .side{
+      background: color-mix(in srgb, var(--card) 90%, transparent);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      padding:16px;
+      display:flex;flex-direction:column;gap:12px;
+    }
+    .side h3{margin:0;font-size:14px;letter-spacing:.2px;text-transform:uppercase;opacity:.9}
+    .mini{
+      border-radius: var(--radius-sm);
+      border:1px dashed color-mix(in srgb, var(--border) 75%, transparent);
+      padding:12px;
+      color:var(--muted);
+      font-weight:650;
+      background: linear-gradient(180deg,
+        color-mix(in srgb, var(--card) 88%, transparent),
+        transparent
+      );
+    }
+    .btn{
+      border:none;
+      border-radius: 14px;
+      padding:10px 12px;
+      font-weight:800;
+      cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      background: linear-gradient(135deg, var(--primary), color-mix(in srgb, var(--secondary) 70%, var(--primary)));
+      color:white;
+      box-shadow: 0 18px 45px rgba(255,77,109,.20);
+    }
+    .btn.secondary{
+      background: color-mix(in srgb, var(--card) 92%, transparent);
+      color:var(--ink);
+      border:1px solid var(--border);
+      box-shadow:none;
+    }
+
+    .grid{
+      margin-top:22px;
+      display:grid;
+      grid-template-columns: 1fr .38fr;
+      gap:18px;
+      align-items:start;
+    }
+    @media (max-width: 960px){
+      .grid{grid-template-columns:1fr}
+    }
+
+    .card{
+      background: color-mix(in srgb, var(--card) 92%, transparent);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 14px 40px rgba(15,23,42,.08);
+      overflow:hidden;
+    }
+
+    .card-header{
+      padding:16px 18px;
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+      justify-content:space-between;
+      border-bottom:1px solid var(--border);
+    }
+
+    .card-title{
+      display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+    }
+    .daypill{
+      font-weight:900;
+      padding:6px 10px;
+      border-radius:999px;
+      background: color-mix(in srgb, var(--sea) 16%, transparent);
+      border:1px solid color-mix(in srgb, var(--sea) 30%, var(--border));
+    }
+    .date{
+      font-weight:900;
+      background: color-mix(in srgb, var(--sun) 18%, transparent);
+      border:1px solid color-mix(in srgb, var(--sun) 35%, var(--border));
+      padding:6px 10px;border-radius:999px;
+    }
+    .focus{
+      color:var(--muted);
+      font-weight:700;
+      margin-top:6px;
+    }
+    details{padding:0;margin:0}
+    summary{
+      list-style:none;
+      cursor:pointer;
+      display:flex;align-items:center;gap:10px;
+      font-weight:900;
+      user-select:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    .chev{
+      width:28px;height:28px;border-radius:10px;
+      display:grid;place-items:center;
+      border:1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 92%, transparent);
+      font-weight:900;
+      transform: rotate(0deg);
+      transition: transform .18s ease;
+    }
+    details[open] .chev{transform: rotate(90deg)}
+    .card-body{padding:14px 18px 18px}
+    .timeline{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+    .item{
+      display:flex;gap:12px;align-items:flex-start;
+      padding:12px;
+      border-radius: var(--radius-sm);
+      border:1px solid var(--border);
+      background: linear-gradient(180deg,
+        color-mix(in srgb, var(--card) 92%, transparent),
+        transparent
+      );
+    }
+    .time{
+      min-width:78px;
+      font-weight:900;
+      color:color-mix(in srgb, var(--ink) 82%, var(--muted));
+    }
+    .content b{display:block;margin-bottom:2px}
+    .content{color:var(--muted);font-weight:650}
+    .content b{color:var(--ink)}
+    .tagline{
+      display:flex;flex-wrap:wrap;gap:8px;margin-top:8px
+    }
+    .tag{
+      font-weight:800;
+      padding:6px 10px;border-radius:999px;
+      border:1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 92%, transparent);
+      color:var(--ink);
+    }
+    .tag.p{background: color-mix(in srgb, var(--primary) 12%, transparent);border-color: color-mix(in srgb, var(--primary) 28%, var(--border))}
+    .tag.s{background: color-mix(in srgb, var(--sea) 12%, transparent);border-color: color-mix(in srgb, var(--sea) 28%, var(--border))}
+    .tag.a{background: color-mix(in srgb, var(--accent) 12%, transparent);border-color: color-mix(in srgb, var(--accent) 28%, var(--border))}
+    .tag.u{background: color-mix(in srgb, var(--sun) 14%, transparent);border-color: color-mix(in srgb, var(--sun) 35%, var(--border))}
+
+    .sidebar{
+      position:sticky; top:84px;
+      padding:16px;
+    }
+    .sidebar .box{
+      padding:14px;
+      border-radius: var(--radius);
+      border:1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 92%, transparent);
+      box-shadow: 0 14px 40px rgba(15,23,42,.06);
+    }
+    .sidebar h4{margin:0 0 8px 0}
+    .muted{color:var(--muted);font-weight:650}
+    .hr{height:1px;background:var(--border);margin:12px 0}
+    textarea{
+      width:100%;min-height:120px;resize:vertical;
+      border-radius:14px;border:1px solid var(--border);
+      background: color-mix(in srgb, var(--bg) 62%, var(--card));
+      color:var(--ink);
+      padding:10px;
+      font-family:var(--font);
+      font-weight:650;
+      outline:none;
+    }
+    .toast{
+      position:fixed;left:50%;bottom:18px;transform:translateX(-50%);
+      padding:10px 12px;border-radius:999px;
+      background: color-mix(in srgb, var(--ink) 88%, transparent);
+      color:var(--bg);
+      font-weight:850;
+      box-shadow: 0 14px 40px rgba(0,0,0,.25);
+      opacity:0; pointer-events:none;
+      transition:opacity .18s ease, transform .18s ease;
+    }
+    .toast.show{opacity:1; transform:translateX(-50%) translateY(-4px)}
+    footer{
+      margin:24px 0 8px;
+      color:var(--muted);
+      font-weight:650;
+      text-align:center;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>廈門 × 漳州｜五日遊</div>
+      </div>
+      <button class="pill" id="themeBtn" type="button" aria-label="切換亮暗模式">
+        <span aria-hidden="true">🌗</span>
+        <small>亮/暗</small>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <h1>五日行程總覽：海濱日落、古城紅磚、在地美食</h1>
+          <div class="sub">城市漫步 × 閩南文化 × 味蕾衝擊（把充實做得很舒服）</div>
+
+          <div class="badgebar">
+            <div class="badge"><span class="dot sea"></span>廈門海邊</div>
+            <div class="badge"><span class="dot u"></span>環島路日落</div>
+            <div class="badge"><span class="dot acc"></span>漳州古城</div>
+            <div class="badge"><span class="dot"></span>沙茶麵/海蠣煎</div>
+            <div class="badge"><span class="dot sec"></span>汕頭燒鵝</div>
+          </div>
+
+          <div class="tagline">
+            <span class="tag s">#中山路騎樓</span>
+            <span class="tag u">#金色夕陽</span>
+            <span class="tag a">#紅磚白底閩南建築</span>
+            <span class="tag p">#海鮮自助</span>
+          </div>
+        </div>
+
+        <aside class="side">
+          <h3>貼心提醒</h3>
+          <div class="mini">✅ 海邊風大：薄外套 + 髮夾/髮圈</div>
+          <div class="mini">✅ 美食密度高：一天至少留一餐「彈性備用」</div>
+          <div class="mini">✅ 步行量大：舒適鞋 + 小腿放鬆貼</div>
+          <div class="row">
+            <button class="btn" id="expandAll" type="button">展開全部</button>
+            <button class="btn secondary" id="collapseAll" type="button">收合全部</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="grid" aria-label="行程內容">
+      <div class="stack" style="display:flex;flex-direction:column;gap:16px">
+
+        <!-- Day 1 -->
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">
+                <span class="daypill">Day 1</span>
+                <span class="date">3/14（週六）</span>
+              </div>
+              <div class="focus">重點：接機・中山路・環島路日落・海鮮自助</div>
+            </div>
+            <details open class="toggle">
+              <summary><span class="chev">›</span>內容</summary>
+            </details>
+          </div>
+          <div class="card-body" data-body>
+            <div class="timeline">
+              <div class="item">
+                <div class="time">10:30</div>
+                <div class="content"><b>五通碼頭接亭亭</b>順利會合，旅程開場。</div>
+              </div>
+              <div class="item">
+                <div class="time">12:30</div>
+                <div class="content"><b>中山路午餐（步行街）</b>沙茶麵、海蠣煎、土筍凍、花生湯（黃則和）。</div>
+              </div>
+              <div class="item">
+                <div class="time">16:30</div>
+                <div class="content"><b>環島路看日落</b>演武大橋觀景平台 / 黃厝沙灘，夕陽灑在海面超出片。</div>
+              </div>
+              <div class="item">
+                <div class="time">19:00</div>
+                <div class="content"><b>廈門海鮮自助餐</b>螃蟹、大蝦安排起來（記得保留胃容量）。</div>
+              </div>
+              <div class="item">
+                <div class="time">21:00</div>
+                <div class="content"><b>回家休息</b>早睡，隔天更舒服。</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Day 2 -->
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">
+                <span class="daypill">Day 2</span>
+                <span class="date">3/15（週日）</span>
+              </div>
+              <div class="focus">重點：在地慢活・市場小吃・咖啡廳聊天</div>
+            </div>
+            <details open class="toggle">
+              <summary><span class="chev">›</span>內容</summary>
+            </details>
+          </div>
+          <div class="card-body" data-body>
+            <div class="timeline">
+              <div class="item">
+                <div class="time">上午</div>
+                <div class="content"><b>燦燦家附近散步</b>把節奏放慢，逛逛街區與生活風景。</div>
+              </div>
+              <div class="item">
+                <div class="time">中午</div>
+                <div class="content"><b>菜市場 / 市集</b>買在地水果、小零食，順便觀察城市日常。</div>
+              </div>
+              <div class="item">
+                <div class="time">下午</div>
+                <div class="content"><b>質感咖啡廳</b>聊天、補眠、整理照片，讓旅程呼吸一下。</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Day 3 -->
+        <article class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title">
+                <span class="daypill">Day 3</span>
+                <span class="date">3/16（週一）</span>
+              </div>
+              <div class="focus">重點：前往漳州・南山寺・古城紅磚・入住古城</div>
+            </div>
+            <details open class="toggle">
+              <summary><span class="chev">›</span>內容</summary>
+            </details>
+          </div>
+          <div class="card-body" data-body>
+            <div class="timeline">
+              <div class="item">
+                <div class="time">10:00</div>
+                <div class="content"><b>前往漳州古城</b>

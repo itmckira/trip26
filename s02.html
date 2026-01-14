@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多巴胺行程規劃</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', 'Microsoft JhengHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        h1 {
+            font-size: 3.5em;
+            color: #fff;
+            text-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .subtitle {
+            color: #fff;
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .add-trip-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            padding: 30px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            height: fit-content;
+            position: sticky;
+            top: 20px;
+        }
+
+        .add-trip-section h2 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #fff;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 0.95em;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1em;
+            background: rgba(255,255,255,0.9);
+            transition: all 0.3s;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+            color: #fff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
+
+        .trips-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .trip-card {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 25px;
+            border-radius: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+            animation: cardAppear 0.5s ease-out;
+        }
+
+        .trip-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .trip-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 15px;
+        }
+
+        .trip-title {
+            font-size: 1.8em;
+            color: #2d3748;
+            font-weight: bold;
+        }
+
+        .trip-date {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            padding: 8px 15px;
+            border-radius: 20px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .trip-details {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: #4a5568;
+        }
+
+        .detail-value {
+            color: #2d3748;
+        }
+
+        .trip-description {
+            background: rgba(255,255,255,0.7);
+            padding: 15px;
+            border-radius: 15px;
+            color: #2d3748;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .delete-btn {
+            background: linear-gradient(135deg, #ff6b6b 0%, #c92a2a 100%);
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            float: right;
+        }
+
+        .delete-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(201, 42, 42, 0.4);
+        }
+
+        .empty-state {
+            background: rgba(255,255,255,0.2);
+            padding: 60px 40px;
+            border-radius: 25px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .empty-state h3 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .add-trip-section {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌈 多巴胺行程規劃 ✨</h1>
+            <p class="subtitle">讓每一次旅行都充滿快樂色彩！</p>
+        </header>
+
+        <div class="main-content">
+            <div class="add-trip-section">
+                <h2>📝 新增行程</h2>
+                <form id="tripForm">
+                    <div class="input-group">
+                        <label for="tripTitle">行程名稱</label>
+                        <input type="text" id="tripTitle" placeholder="例如：週末台北小旅行" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="tripDate">日期</label>
+                        <input type="date" id="tripDate" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="tripLocation">地點</label>
+                        <input type="text" id="tripLocation" placeholder="例如：台北市" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="tripCategory">類型</label>
+                        <select id="tripCategory" required>
+                            <option value="">選擇類型</option>
+                            <option value="🏖️ 度假">🏖️ 度假</option>
+                            <option value="🎨 文化">🎨 文化</option>
+                            <option value="🍔 美食">🍔 美食</option>
+                            <option value="🏔️ 冒險">🏔️ 冒險</option>
+                            <option value="🛍️ 購物">🛍️ 購物</option>
+                            <option value="👨‍👩‍👧‍👦 家庭">👨‍👩‍👧‍👦 家庭</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="tripDescription">行程描述</label>
+                        <textarea id="tripDescription" placeholder="描述你的精彩行程..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn">✨ 新增行程</button>
+                </form>
+            </div>
+
+            <div class="trips-section" id="tripsSection">
+                <div class="empty-state">
+                    <h3>🎉 開始規劃你的精彩旅程吧！</h3>
+                    <p>在左側新增你的第一個行程</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let trips = [];
+
+        const form = document.getElementById('tripForm');
+        const tripsSection = document.getElementById('tripsSection');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const trip = {
+                id: Date.now(),
+                title: document.getElementById('tripTitle').value,
+                date: document.getElementById('tripDate').value,
+                location: document.getElementById('tripLocation').value,
+                category: document.getElementById('tripCategory').value,
+                description: document.getElementById('tripDescription').value
+            };
+
+            trips.unshift(trip);
+            renderTrips();
+            form.reset();
+        });
+
+        function renderTrips() {
+            if (trips.length === 0) {
+                tripsSection.innerHTML = `
+                    <div class="empty-state">
+                        <h3>🎉 開始規劃你的精彩旅程吧！</h3>
+                        <p>在左側新增你的第一個行程</p>
+                    </div>
+                `;
+                return;
+            }
+
+            tripsSection.innerHTML = trips.map(trip => `
+                <div class="trip-card">
+                    <div class="trip-header">
+                        <div class="trip-title">${trip.title}</div>
+                        <div class="trip-date">${formatDate(trip.date)}</div>
+                    </div>
+                    <div class="trip-details">
+                        <span class="detail-label">📍 地點：</span>
+                        <span class="detail-value">${trip.location}</span>
+                        <span class="detail-label">🏷️ 類型：</span>
+                        <span class="detail-value">${trip.category}</span>
+                    </div>
+                    <div class="trip-description">${trip.description}</div>
+                    <button class="delete-btn" onclick="deleteTrip(${trip.id})">🗑️ 刪除</button>
+                </div>
+            `).join('');
+        }
+
+        function deleteTrip(id) {
+            trips = trips.filter(trip => trip.id !== id);
+            renderTrips();
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            return `${year}/${month}/${day}`;
+        }
+    </script>
+</body>
+</html>

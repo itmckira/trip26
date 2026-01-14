@@ -1,0 +1,900 @@
+<!doctype html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>廈門 × 漳州｜五日遊行程</title>
+  <meta name="description" content="廈門與漳州五日遊：城市漫步、古城文化與在地美食" />
+  <style>
+    :root {
+      /* Dopamine but comfy */
+      --bg: #FFF7ED;
+      /* warm cream */
+      --card: #FFFFFF;
+      --ink: #0F172A;
+      --muted: #64748B;
+
+      --p: #FF4D6D;
+      /* pink */
+      --s: #7C3AED;
+      /* purple */
+      --a: #22C55E;
+      /* mint */
+      --sea: #38BDF8;
+      /* sky */
+      --sun: #FBBF24;
+      /* amber */
+
+      --border: rgba(15, 23, 42, .10);
+      --shadow: 0 16px 46px rgba(15, 23, 42, .10);
+      --r: 18px;
+      --rs: 14px;
+
+      --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+        "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0B1020;
+      --card: #0F1730;
+      --ink: #E8EEFF;
+      --muted: #A6B0CF;
+      --border: rgba(232, 238, 255, .12);
+      --shadow: 0 18px 60px rgba(0, 0, 0, .45);
+    }
+
+    html {
+      font-size: 120%;
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font);
+      color: var(--ink);
+      background:
+        radial-gradient(900px 520px at 12% -10%, rgba(255, 77, 109, .18), transparent 60%),
+        radial-gradient(900px 520px at 95% 0%, rgba(56, 189, 248, .18), transparent 60%),
+        radial-gradient(900px 520px at 20% 110%, rgba(34, 197, 94, .14), transparent 55%),
+        var(--bg);
+      line-height: 1.65;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: saturate(160%) blur(10px);
+      background: color-mix(in srgb, var(--bg) 78%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .topbar-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900
+    }
+
+    .logo {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: conic-gradient(from 210deg, var(--p), var(--sun), var(--a), var(--sea), var(--s), var(--p));
+      box-shadow: 0 10px 30px rgba(255, 77, 109, .18);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 92%, transparent);
+      color: var(--ink);
+      font-weight: 800;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 20px 18px 30px;
+    }
+
+    .hero {
+      border-radius: calc(var(--r) + 10px);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      background: linear-gradient(135deg,
+          color-mix(in srgb, var(--p) 18%, transparent),
+          color-mix(in srgb, var(--sea) 16%, transparent) 45%,
+          color-mix(in srgb, var(--a) 14%, transparent));
+      overflow: hidden;
+    }
+
+    .hero-inner {
+      padding: 26px;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 860px) {
+      .hero-inner {
+        grid-template-columns: 1fr
+      }
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.15
+    }
+
+    .sub {
+      margin-top: 10px;
+      color: var(--muted);
+      font-weight: 700
+    }
+
+    .badges {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 92%, transparent);
+      font-weight: 900;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 99px;
+      background: var(--p)
+    }
+
+    .dot.sea {
+      background: var(--sea)
+    }
+
+    .dot.sun {
+      background: var(--sun)
+    }
+
+    .dot.a {
+      background: var(--a)
+    }
+
+    .dot.s {
+      background: var(--s)
+    }
+
+    .side {
+      background: color-mix(in srgb, var(--card) 92%, transparent);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .side h3 {
+      margin: 0;
+      font-size: 14px;
+      letter-spacing: .2px;
+      text-transform: uppercase
+    }
+
+    .note {
+      border-radius: var(--rs);
+      border: 1px dashed color-mix(in srgb, var(--border) 75%, transparent);
+      padding: 10px 12px;
+      background: linear-gradient(180deg, color-mix(in srgb, var(--card) 90%, transparent), transparent);
+      color: var(--muted);
+      font-weight: 750;
+    }
+
+    .btnrow {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 2px
+    }
+
+    .btn {
+      border: none;
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-weight: 950;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--p), color-mix(in srgb, var(--s) 70%, var(--p)));
+      color: white;
+      box-shadow: 0 16px 40px rgba(255, 77, 109, .22);
+    }
+
+    .btn.secondary {
+      background: color-mix(in srgb, var(--card) 92%, transparent);
+      color: var(--ink);
+      border: 1px solid var(--border);
+      box-shadow: none;
+    }
+
+    .grid {
+      margin-top: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .card {
+      background: color-mix(in srgb, var(--card) 92%, transparent);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      box-shadow: 0 14px 40px rgba(15, 23, 42, .08);
+      overflow: hidden;
+    }
+
+    .ch {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .meta {
+      display: flex;
+      flex-direction: column;
+      gap: 6px
+    }
+
+    .line1 {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center
+    }
+
+    .daypill {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--sea) 14%, transparent);
+      border: 1px solid color-mix(in srgb, var(--sea) 28%, var(--border));
+      font-weight: 950;
+    }
+
+    .datepill {
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--sun) 16%, transparent);
+      border: 1px solid color-mix(in srgb, var(--sun) 35%, var(--border));
+      font-weight: 950;
+    }
+
+    .focus {
+      color: var(--muted);
+      font-weight: 800
+    }
+
+    details summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 950;
+      user-select: none;
+    }
+
+    details summary::-webkit-details-marker {
+      display: none
+    }
+
+    .chev {
+      width: 28px;
+      height: 28px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--border);
+      background: color-mix(in srgb, var(--card) 92%, transparent);
+      transition: transform .18s ease;
+      font-weight: 950;
+    }
+
+    details[open] .chev {
+      transform: rotate(90deg)
+    }
+
+    .cb {
+      padding: 14px 18px 18px
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 10px
+    }
+
+    .item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 12px;
+      border-radius: var(--rs);
+      border: 1px solid var(--border);
+      background: linear-gradient(180deg, color-mix(in srgb, var(--card) 92%, transparent), transparent);
+    }
+
+    .time {
+      min-width: 80px;
+      font-weight: 950;
+      color: color-mix(in srgb, var(--ink) 84%, var(--muted))
+    }
+
+    .text {
+      color: var(--muted);
+      font-weight: 750
+    }
+
+    .text b {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 2px
+    }
+
+    .muted {
+      color: var(--muted);
+      font-weight: 750
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--ink) 88%, transparent);
+      color: var(--bg);
+      font-weight: 950;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, .25);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .18s ease, transform .18s ease;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(-4px)
+    }
+
+    footer {
+      margin-top: 18px;
+      text-align: center;
+      color: var(--muted);
+      font-weight: 750
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div data-i18n="brand">廈門 × 漳州｜五日遊</div>
+      </div>
+      <div style="display:flex; gap:10px">
+        <select class="pill" id="langSelect" aria-label="Language"
+          style="appearance:none; padding-right:26px; background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2NDc0OGIiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cG9seWxpbmUgcG9pbnRzPSI2IDkgMTIgMTUgMTggOSIvPjwvc3ZnPg=='); background-repeat:no-repeat; background-position:right 4px center; background-size:16px;">
+          <option value="zh-Hant">繁體中文</option>
+          <option value="zh-Hans">简体中文</option>
+          <option value="en">English</option>
+        </select>
+        <button class="pill" id="themeBtn" type="button" aria-label="Toggle Theme" data-i18n="theme_btn">🌗 亮/暗</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <h1 data-i18n="hero_title">城市漫步 × 古城紅磚 × 在地美食</h1>
+          <div class="sub" data-i18n="hero_sub">把「很充實」整理成「很舒服」：收合卡片、亮暗模式、手機也好讀。</div>
+
+          <div class="badges">
+            <div class="badge"><span class="dot sea"></span><span data-i18n="tag_1">海濱日落</span></div>
+            <div class="badge"><span class="dot sun"></span><span data-i18n="tag_2">中山路騎樓</span></div>
+            <div class="badge"><span class="dot a"></span><span data-i18n="tag_3">漳州古城</span></div>
+            <div class="badge"><span class="dot s"></span><span data-i18n="tag_4">汕頭燒鵝</span></div>
+          </div>
+        </div>
+
+        <aside class="side">
+          <h3 data-i18n="tips_title">貼心提醒</h3>
+          <div class="note" data-i18n="tip_1">✅ 海邊風大：薄外套＋髮夾</div>
+          <div class="note" data-i18n="tip_2">✅ 美食密度高：每天留一餐彈性備用</div>
+          <div class="note" data-i18n="tip_3">✅ 步行量大：舒適鞋＋補水</div>
+          <div class="btnrow">
+            <button class="btn" id="expandAll" type="button" data-i18n="expand_all">展開全部</button>
+            <button class="btn secondary" id="collapseAll" type="button" data-i18n="collapse_all">收合全部</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="grid">
+      <!-- Day 1 -->
+      <article class="card">
+        <div class="ch">
+          <div class="meta">
+            <div class="line1">
+              <span class="daypill">Day 1</span>
+              <span class="datepill" data-i18n="d1_date">3/14（週六）</span>
+            </div>
+            <div class="focus" data-i18n="d1_focus">重點：接機、漫步中山路、環島路日落、海鮮自助</div>
+          </div>
+          <details class="toggle" open>
+            <summary><span class="chev">›</span><span data-i18n="lbl_content">內容</span></summary>
+          </details>
+        </div>
+        <div class="cb" data-body>
+          <div class="timeline">
+            <div class="item">
+              <div class="time">10:30</div>
+              <div class="text" data-i18n="d1_i1"><b>五通碼頭接亭亭</b>順利會合，旅程開場。</div>
+            </div>
+            <div class="item">
+              <div class="time">12:30</div>
+              <div class="text" data-i18n="d1_i2"><b>中山路午餐（步行街）</b>沙茶麵、海蠣煎、土筍凍、花生湯（黃則和）。</div>
+            </div>
+            <div class="item">
+              <div class="time">16:30</div>
+              <div class="text" data-i18n="d1_i3"><b>環島路看日落</b>演武大橋觀景平台 / 黃厝沙灘，金色夕陽超出片。</div>
+            </div>
+            <div class="item">
+              <div class="time">19:00</div>
+              <div class="text" data-i18n="d1_i4"><b>海鮮自助餐</b>螃蟹、大蝦安排起來（記得留胃）。</div>
+            </div>
+            <div class="item">
+              <div class="time">21:00</div>
+              <div class="text" data-i18n="d1_i5"><b>回家休息</b>早睡，隔天更舒服。</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Day 2 -->
+      <article class="card">
+        <div class="ch">
+          <div class="meta">
+            <div class="line1">
+              <span class="daypill">Day 2</span>
+              <span class="datepill" data-i18n="d2_date">3/15（週日）</span>
+            </div>
+            <div class="focus" data-i18n="d2_focus">重點：融入當地生活、逛菜市場、咖啡廳聊天</div>
+          </div>
+          <details class="toggle" open>
+            <summary><span class="chev">›</span><span data-i18n="lbl_content">內容</span></summary>
+          </details>
+        </div>
+        <div class="cb" data-body>
+          <div class="timeline">
+            <div class="item">
+              <div class="time">上午</div>
+              <div class="text" data-i18n="d2_i1"><b>燦燦家附近逛逛</b>慢慢走、慢慢看，享受週末節奏。</div>
+            </div>
+            <div class="item">
+              <div class="time">中午</div>
+              <div class="text" data-i18n="d2_i2"><b>市集／菜市場</b>買在地水果、小零食，感受城市日常。</div>
+            </div>
+            <div class="item">
+              <div class="time">下午</div>
+              <div class="text" data-i18n="d2_i3"><b>找家質感咖啡廳</b>聊天、整理照片、補充能量。</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Day 3 -->
+      <article class="card">
+        <div class="ch">
+          <div class="meta">
+            <div class="line1">
+              <span class="daypill">Day 3</span>
+              <span class="datepill" data-i18n="d3_date">3/16（週一）</span>
+            </div>
+            <div class="focus" data-i18n="d3_focus">重點：前往漳州古城、南山寺、紅磚建築、入住古城</div>
+          </div>
+          <details class="toggle" open>
+            <summary><span class="chev">›</span><span data-i18n="lbl_content">內容</span></summary>
+          </details>
+        </div>
+        <div class="cb" data-body>
+          <div class="timeline">
+            <div class="item">
+              <div class="time">10:00</div>
+              <div class="text" data-i18n="d3_i1"><b>前往漳州古城</b>廈門出發約 1 小時車程（可彈性調整）。</div>
+            </div>
+            <div class="item">
+              <div class="time">12:00</div>
+              <div class="text" data-i18n="d3_i2"><b>天下美食街午餐</b>必吃：漳州滷麵、手抓麵。</div>
+            </div>
+            <div class="item">
+              <div class="time">14:00</div>
+              <div class="text" data-i18n="d3_i3"><b>南山寺</b>感受寧靜禪意，拍照也很有氛圍。</div>
+            </div>
+            <div class="item">
+              <div class="time">16:00</div>
+              <div class="text" data-i18n="d3_i4"><b>漳州古城漫遊</b>紅磚白底閩南建築，文青散步路線。</div>
+            </div>
+            <div class="item">
+              <div class="time">19:00</div>
+              <div class="text" data-i18n="d3_i5"><b>入住印象居飯店</b>古城夜晚安靜舒服。</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Day 4 -->
+      <article class="card">
+        <div class="ch">
+          <div class="meta">
+            <div class="line1">
+              <span class="daypill">Day 4</span>
+              <span class="datepill" data-i18n="d4_date">3/17（週二）</span>
+            </div>
+            <div class="focus" data-i18n="d4_focus">重點：古城早餐、汕頭燒鵝、回廈門</div>
+          </div>
+          <details class="toggle" open>
+            <summary><span class="chev">›</span><span data-i18n="lbl_content">內容</span></summary>
+          </details>
+        </div>
+        <div class="cb" data-body>
+          <div class="timeline">
+            <div class="item">
+              <div class="time">08:30</div>
+              <div class="text" data-i18n="d4_i1"><b>天下美食街早餐</b>豆花粉／蚵仔煎（別吃太滿）。</div>
+            </div>
+            <div class="item">
+              <div class="time">12:00</div>
+              <div class="text" data-i18n="d4_i2"><b>汕頭燒鵝（重點行程）</b>獅頭鵝 + 特製滷汁：味蕾暴擊。</div>
+            </div>
+            <div class="item">
+              <div class="time">16:00</div>
+              <div class="text" data-i18n="d4_i3"><b>啟程回廈門</b>路上補眠、補水。</div>
+            </div>
+            <div class="item">
+              <div class="time">19:00</div>
+              <div class="text" data-i18n="d4_i4"><b>回到燦燦家</b>晚上舒服收尾。</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Day 5 -->
+      <article class="card">
+        <div class="ch">
+          <div class="meta">
+            <div class="line1">
+              <span class="daypill">Day 5</span>
+              <span class="datepill" data-i18n="d5_date">3/18（週三）</span>
+            </div>
+            <div class="focus" data-i18n="d5_focus">重點：私人廚房午餐、返程、伴手禮</div>
+          </div>
+          <details class="toggle" open>
+            <summary><span class="chev">›</span><span data-i18n="lbl_content">內容</span></summary>
+          </details>
+        </div>
+        <div class="cb" data-body>
+          <div class="timeline">
+            <div class="item">
+              <div class="time">12:00</div>
+              <div class="text" data-i18n="d5_i1"><b>燦燦大廚午餐</b>最後的聚餐最溫暖。</div>
+            </div>
+            <div class="item">
+              <div class="time">14:00</div>
+              <div class="text" data-i18n="d5_i2"><b>出發前往碼頭</b>預留彈性時間整理行李。</div>
+            </div>
+            <div class="item">
+              <div class="time">15:00</div>
+              <div class="text" data-i18n="d5_i3"><b>五通碼頭返程</b>伴手禮：鼓浪嶼餡餅、茶葉等。</div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite">已複製 ✅</div>
+
+  <script>
+    const toast = document.getElementById('toast');
+    function showToast(t) {
+      toast.textContent = t;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 1200);
+    }
+
+    // --- Internationalization (i18n) ---
+    const translations = {
+      "zh-Hant": {
+        "title": "廈門 × 漳州｜五日遊行程",
+        "brand": "廈門 × 漳州｜五日遊",
+        "theme_btn": "🌗 亮/暗",
+        "hero_title": "城市漫步 × 古城紅磚 × 在地美食",
+        "hero_sub": "把「很充實」整理成「很舒服」：收合卡片、亮暗模式、手機也好讀。",
+        "tag_1": "海濱日落",
+        "tag_2": "中山路騎樓",
+        "tag_3": "漳州古城",
+        "tag_4": "汕頭燒鵝",
+        "tips_title": "貼心提醒",
+        "tip_1": "✅ 海邊風大：薄外套＋髮夾",
+        "tip_2": "✅ 美食密度高：每天留一餐彈性備用",
+        "tip_3": "✅ 步行量大：舒適鞋＋補水",
+        "expand_all": "展開全部",
+        "collapse_all": "收合全部",
+        "lbl_content": "內容",
+        "d1_focus": "重點：接機、漫步中山路、環島路日落、海鮮自助",
+        "d1_date": "3/14（週六）",
+        "d1_i1": "<b>五通碼頭接亭亭</b>順利會合，旅程開場。",
+        "d1_i2": "<b>中山路午餐（步行街）</b>必吃：蓮歡海蠣煎、1980 燒肉粽、黃則和花生湯。",
+        "d1_i3": "<b>環島路看日落</b>演武大橋觀景平台 / 黃厝沙灘，金色夕陽超出片。",
+        "d1_i4": "<b>海鮮自助餐</b>推薦首選 <b>悅鼎會</b>（頂級生猛活鮮）或 <b>漁緯港</b>（高CP值蒸汽火鍋）。",
+        "d1_i5": "<b>回家休息</b>早睡，隔天更舒服。",
+        "d2_focus": "重點：融入當地生活、逛菜市場、咖啡廳聊天",
+        "d2_date": "3/15（週日）",
+        "d2_i1": "<b>燦燦家附近逛逛</b>慢慢走、慢慢看，享受週末節奏。",
+        "d2_i2": "<b>市集／菜市場</b>買在地水果、小零食，感受城市日常。",
+        "d2_i3": "<b>找家質感咖啡廳</b>聊天、整理照片、補充能量。",
+        "d3_focus": "重點：前往漳州古城、南山寺、紅磚建築、入住古城",
+        "d3_date": "3/16（週一）",
+        "d3_i1": "<b>前往漳州古城</b>廈門出發約 1 小時車程（可彈性調整）。",
+        "d3_i2": "<b>天下美食街午餐</b>必吃：漳州滷麵、手抓麵。",
+        "d3_i3": "<b>南山寺</b>感受寧靜禪意，拍照也很有氛圍。",
+        "d3_i4": "<b>漳州古城漫遊</b>紅磚白底閩南建築，文青散步路線。",
+        "d3_i5": "<b>入住印象居飯店</b>古城夜晚安靜舒服。",
+        "d4_focus": "重點：古城早餐、汕頭燒鵝、回廈門",
+        "d4_date": "3/17（週二）",
+        "d4_i1": "<b>天下美食街早餐</b>豆花粉／蚵仔煎（別吃太滿）。",
+        "d4_i2": "<b>汕頭燒鵝（重點行程）</b>推薦老字號：<b>春梅里</b>（粉鵝肝）、<b>日日香</b>（獅頭鵝）或 <b>蘇南勤記</b>（非遺）。",
+        "d4_i3": "<b>啟程回廈門</b>路上補眠、補水。",
+        "d4_i4": "<b>回到燦燦家</b>晚上舒服收尾。",
+        "d5_focus": "重點：私人廚房午餐、返程、伴手禮",
+        "d5_date": "3/18（週三）",
+        "d5_i1": "<b>燦燦大廚午餐</b>最後的聚餐最溫暖。",
+        "d5_i2": "<b>出發前往碼頭</b>預留彈性時間整理行李。",
+        "d5_i3": "<b>五通碼頭返程</b>",
+        "toast_copied": "已複製 ✅",
+        "toast_dark": "切到暗色模式 🌙",
+        "toast_light": "切到亮色模式 ☀️",
+        "toast_expanded": "已展開全部",
+        "toast_collapsed": "已收合全部"
+      },
+      "zh-Hans": {
+        "title": "厦门 × 漳州｜五日游行程",
+        "brand": "厦门 × 漳州｜五日游",
+        "theme_btn": "🌗 亮/暗",
+        "hero_title": "城市漫步 × 古城红砖 × 地道美食",
+        "hero_sub": "把“很充实”整理成“很舒服”：折叠卡片、亮暗模式、手机也好读。",
+        "tag_1": "海滨日落",
+        "tag_2": "中山路骑楼",
+        "tag_3": "漳州古城",
+        "tag_4": "汕头烧鹅",
+        "tips_title": "贴心提醒",
+        "tip_1": "✅ 海边风大：薄外套＋发夹",
+        "tip_2": "✅ 美食密度高：每天留一餐弹性备用",
+        "tip_3": "✅ 步行量大：舒适鞋＋补水",
+        "expand_all": "展开全部",
+        "collapse_all": "收合全部",
+        "lbl_content": "内容",
+        "d1_focus": "重点：接机、漫步中山路、环岛路日落、海鲜自助",
+        "d1_date": "3/14（周六）",
+        "d1_i1": "<b>五通码头接亭亭</b>顺利会合，旅程开场。",
+        "d1_i2": "<b>中山路午餐（步行街）</b>必吃：莲欢海蛎煎、1980 烧肉粽、黄则和花生汤。",
+        "d1_i3": "<b>环岛路看日落</b>演武大橋观景平台 / 黄厝沙滩，金色夕阳超出片。",
+        "d1_i4": "<b>海鲜自助餐</b>推荐首选 <b>悦鼎会</b>（顶级生猛活鲜）或 <b>渔纬港</b>（高CP值蒸汽火锅）。",
+        "d1_i5": "<b>回家休息</b>早睡，隔天更舒服。",
+        "d2_focus": "重点：融入当地生活、逛菜市场、咖啡厅聊天",
+        "d2_date": "3/15（周日）",
+        "d2_i1": "<b>灿灿家附近逛逛</b>慢慢走、慢慢看，享受周末节奏。",
+        "d2_i2": "<b>市集／菜市场</b>买在地水果、小零食，感受城市日常。",
+        "d2_i3": "<b>找家质感咖啡厅</b>聊天、整理照片、补充能量。",
+        "d3_focus": "重点：前往漳州古城、南山寺、红砖建筑、入住古城",
+        "d3_date": "3/16（周一）",
+        "d3_i1": "<b>前往漳州古城</b>厦门出发约 1 小时车程（可弹性调整）。",
+        "d3_i2": "<b>天下美食街午餐</b>必吃：漳州卤面、手抓面。",
+        "d3_i3": "<b>南山寺</b>感受宁静禅意，拍照也很有氛围。",
+        "d3_i4": "<b>漳州古城漫游</b>红砖白底闽南建筑，文青散步路线。",
+        "d3_i5": "<b>入住印象居饭店</b>古城夜晚安静舒服。",
+        "d4_focus": "重点：古城早餐、汕头烧鹅、回厦门",
+        "d4_date": "3/17（周二）",
+        "d4_i1": "<b>天下美食街早餐</b>豆花粉／蚵仔煎（别吃太满）。",
+        "d4_i2": "<b>汕头烧鹅（重点行程）</b>推荐老字号：<b>春梅里</b>（粉鹅肝）、<b>日日香</b>（狮头鹅）或 <b>苏南勤记</b>（非遗）。",
+        "d4_i3": "<b>启程回厦门</b>路上补眠、补水。",
+        "d4_i4": "<b>回到灿灿家</b>晚上舒服收尾。",
+        "d5_focus": "重点：私人厨房午餐、返程、伴手礼",
+        "d5_date": "3/18（周三）",
+        "d5_i1": "<b>灿灿大厨午餐</b>最后的聚餐最温暖。",
+        "d5_i2": "<b>出发前往码头</b>预留弹性时间整理行李。",
+        "d5_i3": "<b>五通码头返程</b>",
+        "toast_copied": "已复制 ✅",
+        "toast_dark": "切到暗色模式 🌙",
+        "toast_light": "切到亮色模式 ☀️",
+        "toast_expanded": "已展开全部",
+        "toast_collapsed": "已收合全部"
+      },
+      "en": {
+        "title": "Xiamen & Zhangzhou | 5-Day Trip",
+        "brand": "Xiamen & Zhangzhou | 5 Days",
+        "theme_btn": "🌗 Mode",
+        "hero_title": "City Walk × Ancient Red Brick × Local Food",
+        "hero_sub": "Organizing 'Busy' into 'Comfortable': Collapsible cards, Dark/Light mode, Mobile friendly.",
+        "tag_1": "Seaside Sunset",
+        "tag_2": "Zhongshan Rd",
+        "tag_3": "Zhangzhou Town",
+        "tag_4": "Roast Goose",
+        "tips_title": "Tips",
+        "tip_1": "✅ Windy Seaside: Jacket + Hair clip",
+        "tip_2": "✅ High Food Density: Save room for one meal",
+        "tip_3": "✅ Lots of Walking: Comfy shoes + Water",
+        "expand_all": "Expand All",
+        "collapse_all": "Collapse All",
+        "lbl_content": "Details",
+        "d1_focus": "Highlights: Pickup, Zhongshan Rd, Sunset, Seafood",
+        "d1_date": "3/14 (Sat)",
+        "d1_i1": "<b>Wutong Wharf Pickup</b> Meeting up, trip starts.",
+        "d1_i2": "<b>Lunch at Zhongshan Rd</b> Must try: Lianhuan Oyster Omelet, 1980 Zongzi, Huangzehe Peanut Soup.",
+        "d1_i3": "<b>Sunset at Huandao Rd</b> Yanwu Bridge / Huangcuo Beach.",
+        "d1_i4": "<b>Seafood Buffet</b> Rec: <b>Yue Ding Hui</b> (Premium) or <b>Yu Wei Gang</b> (Steam Pot).",
+        "d1_i5": "<b>Rest</b> Sleep early for a better tomorrow.",
+        "d2_focus": "Highlights: Local life, Market, Café",
+        "d2_date": "3/15 (Sun)",
+        "d2_i1": "<b>Walk around Cancan's home</b> Slow down, enjoy the weekend pace.",
+        "d2_i2": "<b>Local Market</b> Buy fruits, snacks, feel the daily vibe.",
+        "d2_i3": "<b>Nice Café</b> Chat, organize photos, recharge.",
+        "d3_focus": "Highlights: Zhangzhou, Nanshan Temple, Old Town, Stay",
+        "d3_date": "3/16 (Mon)",
+        "d3_i1": "<b>To Zhangzhou</b> ~1 hr drive from Xiamen.",
+        "d3_i2": "<b>Lunch at Food Street</b> Must eat: Braised noodles, Hand-grabbed noodles.",
+        "d3_i3": "<b>Nanshan Temple</b> Peaceful Zen vibe, great for photos.",
+        "d3_i4": "<b>Zhangzhou Old Town</b> Red brick architecture, cultural walk.",
+        "d3_i5": "<b>Check-in Yinxiangju Hotel</b> Quiet and comfortable night.",
+        "d4_focus": "Highlights: Breakfast, Roast Goose, Back to Xiamen",
+        "d4_date": "3/17 (Tue)",
+        "d4_i1": "<b>Breakfast at Food Street</b> Bean curd noodles / Oyster omelet.",
+        "d4_i2": "<b>Braised Goose (Highlight)</b> Rec: <b>Chunmeili</b> (Foie gras), <b>Ririxiang</b> (Lion-head), <b>Sunan Qinji</b>.",
+        "d4_i3": "<b>Return to Xiamen</b> Nap and hydrate on the way.",
+        "d4_i4": "<b>Back to Cancan's</b> Relaxing evening.",
+        "d5_focus": "Highlights: Private Kitchen, Return, Souvenirs",
+        "d5_date": "3/18 (Wed)",
+        "d5_i1": "<b>Chef Cancan's Lunch</b> The warmest final gathering.",
+        "d5_i2": "<b>To Ferry Terminal</b> Flexible time for packing.",
+        "d5_i3": "<b>Return from Wutong</b>",
+        "toast_copied": "Copied ✅",
+        "toast_dark": "Dark Mode 🌙",
+        "toast_light": "Light Mode ☀️",
+        "toast_expanded": "Expanded All",
+        "toast_collapsed": "Collapsed All"
+      }
+    };
+
+    const langSelect = document.getElementById('langSelect');
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+
+      // Update Text
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.innerHTML = translations[lang][key]; // Using innerHTML to support <b>
+        }
+      });
+
+      // Update Meta
+      if (translations[lang] && translations[lang]['title']) {
+        document.title = translations[lang]['title'];
+      }
+
+      // Save
+      localStorage.setItem('trip_lang', lang);
+    }
+
+    // Init Language
+    const savedLang = localStorage.getItem('trip_lang');
+    // Default to zh-Hant if no saved lang or invalid
+    const defaultLang = savedLang && translations[savedLang] ? savedLang : 'zh-Hant';
+
+    if (langSelect) {
+      langSelect.value = defaultLang;
+      langSelect.addEventListener('change', (e) => {
+        setLanguage(e.target.value);
+      });
+    }
+
+    // Apply immediately
+    setLanguage(defaultLang);
+
+
+    // Used for existing Theme toggle
+    const saved = localStorage.getItem('trip_theme');
+    if (saved === 'dark') document.body.setAttribute('data-theme', 'dark');
+
+    document.getElementById('themeBtn').addEventListener('click', () => {
+      const isDark = document.body.getAttribute('data-theme') === 'dark';
+      if (isDark) document.body.removeAttribute('data-theme');
+      else document.body.setAttribute('data-theme', 'dark');
+      localStorage.setItem('trip_theme', isDark ? 'light' : 'dark');
+
+      // Get current lang for toast
+      const curLang = document.documentElement.lang || 'zh-Hant';
+      const t = translations[curLang] || translations['zh-Hant'];
+      showToast(isDark ? t['toast_light'] : t['toast_dark']);
+    });
+
+    // Details <-> body binding
+    const toggles = Array.from(document.querySelectorAll('.toggle'));
+    const bodies = Array.from(document.querySelectorAll('[data-body]'));
+    toggles.forEach((d, i) => {
+      const body = bodies[i];
+      body.style.display = d.open ? 'block' : 'none';
+      d.addEventListener('toggle', () => body.style.display = d.open ? 'block' : 'none');
+    });
+
+    function setAll(open) {
+      toggles.forEach(d => open ? d.setAttribute('open', '') : d.removeAttribute('open'));
+      bodies.forEach(b => b.style.display = open ? 'block' : 'none');
+    }
+
+    document.getElementById('expandAll').addEventListener('click', () => {
+      setAll(true);
+      const curLang = document.documentElement.lang || 'zh-Hant';
+      const t = translations[curLang] || translations['zh-Hant'];
+      showToast(t['toast_expanded']);
+    });
+    document.getElementById('collapseAll').addEventListener('click', () => {
+      setAll(false);
+      const curLang = document.documentElement.lang || 'zh-Hant';
+      const t = translations[curLang] || translations['zh-Hant'];
+      showToast(t['toast_collapsed']);
+    });
+  </script>
+</body>
+
+</html>
