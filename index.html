@@ -435,6 +435,13 @@
         <section class="hero">
             <div class="hero-inner">
                 <div>
+                    <div id="countdown" class="badge"
+                        style="margin-bottom:12px; border-color:var(--p); background:color-mix(in srgb, var(--p) 12%, transparent); color:var(--p);">
+                        <span class="dot" style="background:var(--p)"></span>
+                        <span data-i18n="countdown_prefix">還有</span>
+                        <span id="daysLeft" style="font-family:monospace; font-size:1.1em; padding:0 2px;">--</span>
+                        <span data-i18n="countdown_suffix">天出發</span>
+                    </div>
                     <h1 data-i18n="hero_title">城市漫步 × 古城紅磚 × 在地美食</h1>
                     <div class="sub" data-i18n="hero_sub">把「很充實」整理成「很舒服」：收合卡片、亮暗模式、手機也好讀。</div>
 
@@ -442,7 +449,7 @@
                         <div class="badge"><span class="dot sea"></span><span data-i18n="tag_1">海濱日落</span></div>
                         <div class="badge"><span class="dot sun"></span><span data-i18n="tag_2">中山路騎樓</span></div>
                         <div class="badge"><span class="dot a"></span><span data-i18n="tag_3">漳州古城</span></div>
-                        <div class="badge"><span class="dot s"></span><span data-i18n="tag_4">汕頭燒鵝</span></div>
+                        <div class="badge"><span class="dot s"></span><span data-i18n="tag_4">三平寺祈福</span></div>
                     </div>
                 </div>
 
@@ -491,7 +498,8 @@
                         </div>
                         <div class="item">
                             <div class="time">19:00</div>
-                            <div class="text" data-i18n="d1_i4"><b>海鮮自助餐</b>螃蟹、大蝦安排起來（記得留胃）。</div>
+                            <div class="text" data-i18n="d1_i4"><b>海鮮自助餐</b>推薦 <b>加餐海鮮</b>（高CP值）或 <b>漁緯港</b>（蒸汽火鍋）。
+                            </div>
                         </div>
                         <div class="item">
                             <div class="time">21:00</div>
@@ -581,7 +589,7 @@
                             <span class="daypill">Day 4</span>
                             <span class="datepill" data-i18n="d4_date">3/17（週二）</span>
                         </div>
-                        <div class="focus" data-i18n="d4_focus">重點：古城早餐、汕頭燒鵝、回廈門</div>
+                        <div class="focus" data-i18n="d4_focus">重點：三平寺祈福、素齋、回廈門</div>
                     </div>
                     <details class="toggle" open>
                         <summary><span class="chev">›</span><span data-i18n="lbl_content">內容</span></summary>
@@ -590,12 +598,16 @@
                 <div class="cb" data-body>
                     <div class="timeline">
                         <div class="item">
-                            <div class="time">08:30</div>
-                            <div class="text" data-i18n="d4_i1"><b>天下美食街早餐</b>豆花粉／蚵仔煎（別吃太滿）。</div>
+                            <div class="time">09:00</div>
+                            <div class="text" data-i18n="d4_i1"><b>出發前往三平寺</b>漳州出發約 2.5 小時車程。</div>
                         </div>
                         <div class="item">
-                            <div class="time">12:00</div>
-                            <div class="text" data-i18n="d4_i2"><b>汕頭燒鵝（重點行程）</b>獅頭鵝 + 特製滷汁：味蕾暴擊。</div>
+                            <div class="time">11:30</div>
+                            <div class="text" data-i18n="d4_i2"><b>三平寺朝聖</b>千年古剎，祈福保平安。</div>
+                        </div>
+                        <div class="item">
+                            <div class="time">13:00</div>
+                            <div class="text" data-i18n="d4_lunch"><b>享用素齋</b>三平寺素麵或周邊美食。</div>
                         </div>
                         <div class="item">
                             <div class="time">16:00</div>
@@ -651,12 +663,10 @@
                     <h3 data-i18n="rest_s1_title" style="margin-top:0; color:var(--p);">【3/14 廈門海鮮自助推薦】</h3>
                     <div class="timeline">
                         <div class="item" style="flex-direction:column; gap:6px;">
-                            <div class="text"><b data-i18n="rest_yue_name"
-                                    style="font-size:1.1em; color:var(--ink);">悅鼎會海鮮姿造
-                                    (鷺江道店)</b></div>
-                            <div class="text" data-i18n="rest_yue_addr">地址：廈門市思明區鷺江道 98 號建行大廈 4 樓（就在中山路步行街對面，看完日落過來很方便）。
-                            </div>
-                            <div class="text" data-i18n="rest_yue_feat">特色：窗外可以看到鼓浪嶼夜景，環境非常高級。</div>
+                            <div class="text"><b data-i18n="rest_jia_name"
+                                    style="font-size:1.1em; color:var(--ink);">加餐海鮮自助 (寶龍一城店)</b></div>
+                            <div class="text" data-i18n="rest_jia_addr">地址：廈門市思明區金山路1號寶龍一城 L3 層。</div>
+                            <div class="text" data-i18n="rest_jia_feat">特色：200+道菜品，活鮮現撈（蝦蟹、鮑魚），人均約 170 元，性價比極高。</div>
                         </div>
                         <div class="item" style="flex-direction:column; gap:6px;">
                             <div class="text"><b data-i18n="rest_yu_name"
@@ -667,22 +677,53 @@
                         </div>
                     </div>
 
-                    <h3 data-i18n="rest_s2_title" style="margin-top:24px; color:var(--p);">【3/17 汕頭/漳州滷鵝推薦】</h3>
+                    <h3 data-i18n="rest_s2_title" style="margin-top:24px; color:var(--p);">【3/17 三平寺資訊】</h3>
                     <div class="timeline">
                         <div class="item" style="flex-direction:column; gap:6px;">
-                            <div class="text"><b data-i18n="rest_chun_name"
-                                    style="font-size:1.1em; color:var(--ink);">春梅里鵝肉店
-                                    (汕頭總店)</b></div>
-                            <div class="text" data-i18n="rest_chun_addr">地址：汕頭市金平區中山路與梅峰路交界處（春梅里社區門口）。</div>
-                            <div class="text" data-i18n="rest_chun_rem" style="color:var(--s); font-weight:bold;">
-                                提醒：這家是傳說級老店，鵝肝（粉肝）是必點中的必點！</div>
+                            <div class="text"><b data-i18n="rest_san_name"
+                                    style="font-size:1.1em; color:var(--ink);">三平寺 (三平祖師公)</b></div>
+                            <div class="text" data-i18n="rest_san_addr">地址：漳州市平和縣文峰鎮三平村。</div>
+                            <div class="text" data-i18n="rest_san_rem" style="color:var(--s); font-weight:bold;">
+                                提醒：香火非常鼎盛，心誠則靈。</div>
                         </div>
                         <div class="item" style="flex-direction:column; gap:6px;">
-                            <div class="text"><b data-i18n="rest_riri_name"
-                                    style="font-size:1.1em; color:var(--ink);">日日香滷鵝
-                                    (澄海總店)</b></div>
-                            <div class="text" data-i18n="rest_riri_addr">地址：汕頭市澄海區蓮下鎮建陽路。</div>
-                            <div class="text" data-i18n="rest_riri_rem">提醒：如果開車回程，也可以找連鎖店，但總店的味道最扎實。</div>
+                            <div class="text"><b data-i18n="rest_san_veg_name"
+                                    style="font-size:1.1em; color:var(--ink);">三平素菜館</b></div>
+                            <div class="text" data-i18n="rest_san_veg_addr">地址：三平寺左側廣濟園內（寺廟自設）。</div>
+                            <div class="text" data-i18n="rest_san_veg_feat">特色：選用當地有機蔬菜與泉水烹調，漳州正宗素菜代表，環境清幽有禪意。</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sanping Temple Vegetarian Info Section -->
+        <section class="grid" style="margin-top:40px; padding-top:20px; border-top:1px dashed var(--border);">
+            <h2 data-i18n="veg_info_title" style="margin:0 0 16px; font-size:24px;">為什麼漳州素食值得專程探訪？</h2>
+
+            <div class="card">
+                <div class="cb">
+                    <h3 data-i18n="veg_info_subtitle" style="margin-top:0; color:var(--p);">禪意與美味的雙重奏</h3>
+                    <p data-i18n="veg_info_intro" style="color:var(--muted); font-weight:750; line-height:1.8;">
+                        漳州作為閩南佛教文化重鎮，素食自帶「寺院基因」。您關注的素菜館緊鄰三平寺等景點，吃完素齋徒步參禪，才是正確打開方式。本週多雲低溫，熱湯素膳更能驅散寒意。
+                    </p>
+
+                    <h3 data-i18n="veg_recs_title" style="margin-top:24px; color:var(--p);">重點推薦三處靈魂搭配</h3>
+                    <div class="timeline">
+                        <div class="item" style="flex-direction:column; gap:6px;">
+                            <div class="text"><b data-i18n="veg_rec1_name"
+                                    style="font-size:1.1em; color:var(--ink);">善和緣素食自助餐廳</b></div>
+                            <div class="text" data-i18n="veg_rec1_desc">28元/位的超高性價比，距離三平寺僅15分鐘車程，羅漢齋、素蚵仔煎等閩南特色必嚐。</div>
+                        </div>
+                        <div class="item" style="flex-direction:column; gap:6px;">
+                            <div class="text"><b data-i18n="veg_rec2_name"
+                                    style="font-size:1.1em; color:var(--ink);">得雲居</b></div>
+                            <div class="text" data-i18n="veg_rec2_desc">古厝改造的茶素空間，飯後可體驗漳州水仙茶非遺技藝。</div>
+                        </div>
+                        <div class="item" style="flex-direction:column; gap:6px;">
+                            <div class="text"><b data-i18n="veg_rec3_name"
+                                    style="font-size:1.1em; color:var(--ink);">三平寺-開水房</b></div>
+                            <div class="text" data-i18n="veg_rec3_desc">拜完廣濟祖師後喝一碗用山泉煮的五行蔬菜湯。</div>
                         </div>
                     </div>
                 </div>
@@ -700,6 +741,22 @@
             setTimeout(() => toast.classList.remove('show'), 1200);
         }
 
+        // --- Countdown Logic ---
+        function updateCountdown() {
+            const targetDate = new Date('2026-03-14T00:00:00+08:00'); // Target: March 14, 2026
+            const now = new Date();
+            const diff = targetDate - now;
+
+            if (diff > 0) {
+                const days = Math.ceil(diff / (1000 * 60 * 60 * 24));
+                document.getElementById('daysLeft').textContent = days;
+            } else {
+                document.getElementById('countdown').style.display = 'none';
+            }
+        }
+        updateCountdown();
+
+
         // --- Internationalization (i18n) ---
         const translations = {
             "zh-Hant": {
@@ -711,7 +768,7 @@
                 "tag_1": "海濱日落",
                 "tag_2": "中山路騎樓",
                 "tag_3": "漳州古城",
-                "tag_4": "汕頭燒鵝",
+                "tag_4": "三平寺祈福",
                 "tips_title": "貼心提醒",
                 "tip_1": "✅ 海邊風大：薄外套＋髮夾",
                 "tip_2": "✅ 美食密度高：每天留一餐彈性備用",
@@ -724,7 +781,7 @@
                 "d1_i1": "<b>五通碼頭接亭亭</b>順利會合，旅程開場。",
                 "d1_i2": "<b>中山路午餐（步行街）</b>必吃：蓮歡海蠣煎、1980 燒肉粽、黃則和花生湯。",
                 "d1_i3": "<b>環島路看日落</b>演武大橋觀景平台 / 黃厝沙灘，金色夕陽超出片。",
-                "d1_i4": "<b>海鮮自助餐</b>推薦首選 <b>悅鼎會</b>（頂級生猛活鮮）或 <b>漁緯港</b>（高CP值蒸汽火鍋）。",
+                "d1_i4": "<b>海鮮自助餐</b>推薦 <b>加餐海鮮</b>（高CP值首選）或 <b>漁緯港</b>（熱鬧聚餐）。",
                 "d1_i5": "<b>回家休息</b>早睡，隔天更舒服。",
                 "d2_focus": "重點：融入當地生活、逛菜市場、咖啡廳聊天",
                 "d2_date": "3/15（週日）",
@@ -738,10 +795,11 @@
                 "d3_i3": "<b>南山寺</b>感受寧靜禪意，拍照也很有氛圍。",
                 "d3_i4": "<b>漳州古城漫遊</b>紅磚白底閩南建築，文青散步路線。",
                 "d3_i5": "<b>入住印象居飯店</b>古城夜晚安靜舒服。",
-                "d4_focus": "重點：古城早餐、汕頭燒鵝、回廈門",
+                "d4_focus": "重點：三平寺祈福、素齋、回廈門",
                 "d4_date": "3/17（週二）",
-                "d4_i1": "<b>天下美食街早餐</b>豆花粉／蚵仔煎（別吃太滿）。",
-                "d4_i2": "<b>汕頭燒鵝（重點行程）</b>推薦老字號：<b>春梅里</b>（粉鵝肝）、<b>日日香</b>（獅頭鵝）或 <b>蘇南勤記</b>（非遺）。",
+                "d4_i1": "<b>出發前往三平寺</b>漳州出發約 2.5 小時車程。",
+                "d4_i2": "<b>三平寺朝聖</b>千年古剎，祈福保平安。",
+                "d4_lunch": "<b>享用素齋</b>三平寺素麵或周邊美食。",
                 "d4_i3": "<b>啟程回廈門</b>路上補眠、補水。",
                 "d4_i4": "<b>回到燦燦家</b>晚上舒服收尾。",
                 "d5_focus": "重點：私人廚房午餐、返程、伴手禮",
@@ -751,24 +809,36 @@
                 "d5_i3": "<b>五通碼頭返程</b>",
                 "rest_title": "餐廳詳細資訊",
                 "rest_s1_title": "【3/14 廈門海鮮自助推薦】",
-                "rest_yue_name": "悅鼎會海鮮姿造 (鷺江道店)",
-                "rest_yue_addr": "地址：廈門市思明區鷺江道 98 號建行大廈 4 樓（就在中山路步行街對面，看完日落過來很方便）。",
-                "rest_yue_feat": "特色：窗外可以看到鼓浪嶼夜景，環境非常高級。",
+                "rest_jia_name": "加餐海鮮自助 (寶龍一城店)",
+                "rest_jia_addr": "地址：廈門市思明區金山路1號寶龍一城 L3 層。",
+                "rest_jia_feat": "特色：200+道菜品，活鮮現撈（蝦蟹、鮑魚），人均約 170 元，性價比極高。",
                 "rest_yu_name": "漁緯港海鮮自助 (SM 廣場店)",
                 "rest_yu_addr": "地址：廈門市湖里區嘉禾路 SM 城市廣場一期 5 樓。",
                 "rest_yu_feat": "特色：在地口碑老店，海鮮種類極多，適合喜歡熱鬧氣氛的聚餐。",
-                "rest_s2_title": "【3/17 汕頭/漳州滷鵝推薦】",
-                "rest_chun_name": "春梅里鵝肉店 (汕頭總店)",
-                "rest_chun_addr": "地址：汕頭市金平區中山路與梅峰路交界處（春梅里社區門口）。",
-                "rest_chun_rem": "提醒：這家是傳說級老店，鵝肝（粉肝）是必點中的必點！",
-                "rest_riri_name": "日日香滷鵝 (澄海總店)",
-                "rest_riri_addr": "地址：汕頭市澄海區蓮下鎮建陽路。",
-                "rest_riri_rem": "提醒：如果開車回程，也可以找連鎖店，但總店的味道最扎實。",
+                "rest_s2_title": "【3/17 三平寺資訊】",
+                "rest_san_name": "三平寺 (三平祖師公)",
+                "rest_san_addr": "地址：漳州市平和縣文峰鎮三平村。",
+                "rest_san_rem": "提醒：香火非常鼎盛，心誠則靈。",
+                "rest_san_veg_name": "三平素菜館",
+                "rest_san_veg_addr": "地址：三平寺左側廣濟園內（寺廟自設）。",
+                "rest_san_veg_feat": "特色：選用當地有機蔬菜與泉水烹調，漳州正宗素菜代表，環境清幽有禪意。",
                 "toast_copied": "已複製 ✅",
                 "toast_dark": "切到暗色模式 🌙",
                 "toast_light": "切到亮色模式 ☀️",
                 "toast_expanded": "已展開全部",
-                "toast_collapsed": "已收合全部"
+                "toast_collapsed": "已收合全部",
+                "countdown_prefix": "還有",
+                "countdown_suffix": "天出發",
+                "veg_info_title": "為什麼漳州素食值得專程探訪？",
+                "veg_info_subtitle": "禪意與美味的雙重奏",
+                "veg_info_intro": "漳州作為閩南佛教文化重鎮，素食自帶「寺院基因」。您關注的素菜館緊鄰三平寺等景點，吃完素齋徒步參禪，才是正確打開方式。本週多雲低溫，熱湯素膳更能驅散寒意。",
+                "veg_recs_title": "重點推薦三處靈魂搭配",
+                "veg_rec1_name": "善和緣素食自助餐廳",
+                "veg_rec1_desc": "28元/位的超高性價比，距離三平寺僅15分鐘車程，羅漢齋、素蚵仔煎等閩南特色必嚐。",
+                "veg_rec2_name": "得雲居",
+                "veg_rec2_desc": "古厝改造的茶素空間，飯後可體驗漳州水仙茶非遺技藝。",
+                "veg_rec3_name": "三平寺-開水房",
+                "veg_rec3_desc": "拜完廣濟祖師後喝一碗用山泉煮的五行蔬菜湯。"
             },
             "zh-Hans": {
                 "title": "厦门 × 漳州｜五日遊行程",
@@ -779,7 +849,7 @@
                 "tag_1": "海滨日落",
                 "tag_2": "中山路骑楼",
                 "tag_3": "漳州古城",
-                "tag_4": "汕头烧鹅",
+                "tag_4": "三平寺祈福",
                 "tips_title": "贴心提醒",
                 "tip_1": "✅ 海边风大：薄外套＋发夹",
                 "tip_2": "✅ 美食密度高：每天留一餐弹性备用",
@@ -792,7 +862,7 @@
                 "d1_i1": "<b>五通码头接亭亭</b>顺利会合，旅程开场。",
                 "d1_i2": "<b>中山路午餐（步行街）</b>必吃：莲欢海蛎煎、1980 烧肉粽、黄则和花生汤。",
                 "d1_i3": "<b>环岛路看日落</b>演武大橋观景平台 / 黄厝沙滩，金色夕阳超出片。",
-                "d1_i4": "<b>海鲜自助餐</b>推荐首选 <b>悦鼎会</b>（顶级生猛活鲜）或 <b>渔纬港</b>（高CP值蒸汽火锅）。",
+                "d1_i4": "<b>海鲜自助餐</b>推荐 <b>加餐海鲜</b>（高CP值首选）或 <b>渔纬港</b>（热闹聚餐）。",
                 "d1_i5": "<b>回家休息</b>早睡，隔天更舒服。",
                 "d2_focus": "重点：融入当地生活、逛菜市场、咖啡厅聊天",
                 "d2_date": "3/15（周日）",
@@ -806,10 +876,11 @@
                 "d3_i3": "<b>南山寺</b>感受宁静禅意，拍照也很有氛围。",
                 "d3_i4": "<b>漳州古城漫遊</b>红砖白底闽南建筑，文青散步路线。",
                 "d3_i5": "<b>入住印象居饭店</b>古城夜晚安静舒服。",
-                "d4_focus": "重点：古城早餐、汕头烧鹅、回厦门",
+                "d4_focus": "重点：三平寺祈福、素斋、回厦门",
                 "d4_date": "3/17（周二）",
-                "d4_i1": "<b>天下美食街早餐</b>豆花粉／蚵仔煎（别吃太满）。",
-                "d4_i2": "<b>汕头烧鹅（重点行程）</b>推荐老字号：<b>春梅里</b>（粉鹅肝）、<b>日日香</b>（狮头鹅）或 <b>苏南勤记</b>（非遗）。",
+                "d4_i1": "<b>出发前往三平寺</b>漳州出发约 2.5 小时车程。",
+                "d4_i2": "<b>三平寺朝圣</b>千年古刹，祈福保平安。",
+                "d4_lunch": "<b>享用素斋</b>三平寺素面或周边美食。",
                 "d4_i3": "<b>启程回厦门</b>路上补眠、补水。",
                 "d4_i4": "<b>回到灿灿家</b>晚上舒服收尾。",
                 "d5_focus": "重点：私人厨房午餐、返程、伴手礼",
@@ -819,24 +890,36 @@
                 "d5_i3": "<b>五通码头返程</b>",
                 "rest_title": "餐厅详细资讯",
                 "rest_s1_title": "【3/14 厦门海鲜自助推荐】",
-                "rest_yue_name": "悦鼎会海鲜姿造 (鹭江道店)",
-                "rest_yue_addr": "地址：厦门市思明区鹭江道 98 号建行大厦 4 楼（就在中山路步行街对面，看完日落过来很方便）。",
-                "rest_yue_feat": "特色：窗外可以看到鼓浪屿夜景，环境非常高级。",
+                "rest_jia_name": "加餐海鲜自助 (宝龙一城店)",
+                "rest_jia_addr": "地址：厦门市思明区金山路1号宝龙一城 L3 层。",
+                "rest_jia_feat": "特色：200+道菜品，活鲜现捞（虾蟹、鲍鱼），人均约 170 元，性价比极高。",
                 "rest_yu_name": "渔纬港海鲜自助 (SM 广场店)",
                 "rest_yu_addr": "地址：厦门市湖里区嘉禾路 SM 城市广场一期 5 楼。",
                 "rest_yu_feat": "特色：在地口碑老店，海鲜种类极多，适合喜欢热闹气氛的聚餐。",
-                "rest_s2_title": "【3/17 汕头/漳州卤鹅推荐】",
-                "rest_chun_name": "春梅里鹅肉店 (汕头总店)",
-                "rest_chun_addr": "地址：汕头市金平区中山路与梅峰路交界处（春梅里社区门口）。",
-                "rest_chun_rem": "提醒：这家是传说级老店，鹅肝（粉肝）是必点中的必点！",
-                "rest_riri_name": "日日香卤鹅 (澄海总店)",
-                "rest_riri_addr": "地址：汕头市澄海区莲下镇建阳路。",
-                "rest_riri_rem": "提醒：如果开车回程，也可以找连锁店，但总店的味道最扎实。",
+                "rest_s2_title": "【3/17 三平寺资讯】",
+                "rest_san_name": "三平寺 (三平祖师公)",
+                "rest_san_addr": "地址：漳州市平和县文峰镇三平村。",
+                "rest_san_rem": "提醒：香火非常鼎盛，心诚则灵。",
+                "rest_san_veg_name": "三平素菜馆",
+                "rest_san_veg_addr": "地址：三平寺左侧广济园内（寺庙自设）。",
+                "rest_san_veg_feat": "特色：选用当地有机蔬菜与泉水烹调，漳州正宗素菜代表，环境清幽有禅意。",
                 "toast_copied": "已复制 ✅",
                 "toast_dark": "切到暗色模式 🌙",
                 "toast_light": "切到亮色模式 ☀️",
                 "toast_expanded": "已展开全部",
-                "toast_collapsed": "已收合全部"
+                "toast_collapsed": "已收合全部",
+                "countdown_prefix": "还有",
+                "countdown_suffix": "天出发",
+                "veg_info_title": "为什么漳州素食值得专程探访？",
+                "veg_info_subtitle": "禅意与美味的双重奏",
+                "veg_info_intro": "漳州作为闽南佛教文化重镇，素食自带「寺院基因」。您关注的素菜馆紧邻三平寺等景点，吃完素斋徒步参禅，才是正确打开方式。本周多云低温，热汤素膳更能驱散寒意。",
+                "veg_recs_title": "重点推荐三处灵魂搭配",
+                "veg_rec1_name": "善和缘素食自助餐厅",
+                "veg_rec1_desc": "28元/位的超高性价比，距离三平寺仅15分钟车程，罗汉斋、素蚵仔煎等闽南特色必尝。",
+                "veg_rec2_name": "得云居",
+                "veg_rec2_desc": "古厝改造的茶素空间，饭后可体验漳州水仙茶非遗技艺。",
+                "veg_rec3_name": "三平寺-开水房",
+                "veg_rec3_desc": "拜完广济祖师后喝一碗用山泉煮的五行蔬菜汤。"
             },
             "en": {
                 "title": "Xiamen & Zhangzhou | 5-Day Trip",
@@ -847,7 +930,7 @@
                 "tag_1": "Seaside Sunset",
                 "tag_2": "Zhongshan Rd",
                 "tag_3": "Zhangzhou Town",
-                "tag_4": "Roast Goose",
+                "tag_4": "Sanping Temple",
                 "tips_title": "Tips",
                 "tip_1": "✅ Windy Seaside: Jacket + Hair clip",
                 "tip_2": "✅ High Food Density: Save room for one meal",
@@ -860,7 +943,7 @@
                 "d1_i1": "<b>Wutong Wharf Pickup</b> Meeting up, trip starts.",
                 "d1_i2": "<b>Lunch at Zhongshan Rd</b> Must try: Lianhuan Oyster Omelet, 1980 Zongzi, Huangzehe Peanut Soup.",
                 "d1_i3": "<b>Sunset at Huandao Rd</b> Yanwu Bridge / Huangcuo Beach.",
-                "d1_i4": "<b>Seafood Buffet</b> Rec: <b>Yue Ding Hui</b> (Premium) or <b>Yu Wei Gang</b> (Steam Pot).",
+                "d1_i4": "<b>Seafood Buffet</b> Rec: <b>Jiacan</b> (Best Value) or <b>Yu Wei Gang</b> (Steam Pot).",
                 "d1_i5": "<b>Rest</b> Sleep early for a better tomorrow.",
                 "d2_focus": "Highlights: Local life, Market, Café",
                 "d2_date": "3/15 (Sun)",
@@ -874,10 +957,11 @@
                 "d3_i3": "<b>Nanshan Temple</b> Peaceful Zen vibe, great for photos.",
                 "d3_i4": "<b>Zhangzhou Old Town</b> Red brick architecture, cultural walk.",
                 "d3_i5": "<b>Check-in Yinxiangju Hotel</b> Quiet and comfortable night.",
-                "d4_focus": "Highlights: Breakfast, Roast Goose, Back to Xiamen",
+                "d4_focus": "Highlights: Sanping Temple, Vegetarian Meal, Return to Xiamen",
                 "d4_date": "3/17 (Tue)",
-                "d4_i1": "<b>Breakfast at Food Street</b> Bean curd noodles / Oyster omelet.",
-                "d4_i2": "<b>Braised Goose (Highlight)</b> Rec: <b>Chunmeili</b> (Foie gras), <b>Ririxiang</b> (Lion-head), <b>Sunan Qinji</b>.",
+                "d4_i1": "<b>Depart for Sanping Temple</b> ~2.5 hr drive from Zhangzhou.",
+                "d4_i2": "<b>Sanping Temple</b> Ancient temple visit.",
+                "d4_lunch": "<b>Vegetarian Lunch</b> Temple noodles or local food.",
                 "d4_i3": "<b>Return to Xiamen</b> Nap and hydrate on the way.",
                 "d4_i4": "<b>Back to Cancan's</b> Relaxing evening.",
                 "d5_focus": "Highlights: Private Kitchen, Return, Souvenirs",
@@ -887,24 +971,36 @@
                 "d5_i3": "<b>Return from Wutong</b>",
                 "rest_title": "Restaurant Details",
                 "rest_s1_title": "【3/14 Xiamen Seafood Buffet Recommendations】",
-                "rest_yue_name": "Yue Ding Hui Seafood Zizao (Lujiang Road Branch)",
-                "rest_yue_addr": "Address: 4F, Jianxing Building, No. 98 Lujiang Road, Siming District, Xiamen (Opposite to Zhongshan Road Pedestrian Street, very convenient after watching the sunset).",
-                "rest_yue_feat": "Feature: Night view of Gulangyu Island from the window, very upscale environment.",
+                "rest_jia_name": "Jiacan Seafood Buffet (Baolong Yicheng Branch)",
+                "rest_jia_addr": "Address: 3F, Baolong Yicheng, No. 1 Jinshan Road, Siming District, Xiamen.",
+                "rest_jia_feat": "Feature: 200+ dishes, live seafood (shrimp/crab/abalone), very high value (~170 RMB).",
                 "rest_yu_name": "Yu Wei Gang Seafood Buffet (SM Plaza Branch)",
                 "rest_yu_addr": "Address: 5F, SM City Plaza Phase 1, Jiahe Road, Huli District, Xiamen.",
                 "rest_yu_feat": "Feature: Local reputation old shop, huge variety of seafood, suitable for lively gatherings.",
-                "rest_s2_title": "【3/17 Shantou/Zhangzhou Braised Goose Recommendations】",
-                "rest_chun_name": "Chunmeili Goose Meat Shop (Shantou Main Store)",
-                "rest_chun_addr": "Address: Intersection of Zhongshan Road and Meifeng Road, Jinping District, Shantou (Entrance of Chunmeili Community).",
-                "rest_chun_rem": "Reminder: This is a legendary old shop, goose liver (powder liver) is a must-order!",
-                "rest_riri_name": "Ririxiang Braised Goose (Chenghai Main Store)",
-                "rest_riri_addr": "Address: Jianyang Road, Lianxia Town, Chenghai District, Shantou.",
-                "rest_riri_rem": "Reminder: If driving back, you can also find chain stores, but the main store has the most authentic taste.",
+                "rest_s2_title": "【3/17 Sanping Temple Info】",
+                "rest_san_name": "Sanping Temple (Sanping Zushi Gong)",
+                "rest_san_addr": "Address: Sanping Village, Wenfeng Town, Pinghe County, Zhangzhou.",
+                "rest_san_rem": "Reminder: Very popular place for prayers.",
+                "rest_san_veg_name": "Sanping Vegetable Restaurant",
+                "rest_san_veg_addr": "Address: Inside Guangjiyuan, left of Sanping Temple (Temple-owned).",
+                "rest_san_veg_feat": "Feature: Uses local organic vegetables and spring water. Authentic Zhangzhou vegetarian food in a Zen environment.",
                 "toast_copied": "Copied ✅",
                 "toast_dark": "Dark Mode 🌙",
                 "toast_light": "Light Mode ☀️",
                 "toast_expanded": "Expanded All",
-                "toast_collapsed": "Collapsed All"
+                "toast_collapsed": "Collapsed All",
+                "countdown_prefix": "Starts in",
+                "countdown_suffix": "days",
+                "veg_info_title": "Why Zhangzhou Vegetarian Food Worth Visiting?",
+                "veg_info_subtitle": "Zen & Deliciousness",
+                "veg_info_intro": "As a major Buddhist cultural center in southern Fujian, Zhangzhou's vegetarian cuisine carries a 'temple heritage'. The vegetarian restaurants near Sanping Temple offer the perfect combination of dining and meditation. In this cool weather, warm vegetable soup is especially comforting.",
+                "veg_recs_title": "Three Must-Try Recommendations",
+                "veg_rec1_name": "Shanheyuan Vegetarian Buffet",
+                "veg_rec1_desc": "Excellent value at 28 RMB/person, just 15 minutes from Sanping Temple. Try Luohan Zhai and vegetarian oyster omelet.",
+                "veg_rec2_name": "Deyunju",
+                "veg_rec2_desc": "Traditional house converted into tea and vegetarian space. Experience Zhangzhou Narcissus tea heritage.",
+                "veg_rec3_name": "Sanping Temple - Hot Water Room",
+                "veg_rec3_desc": "After worship, enjoy a bowl of five-element vegetable soup made with mountain spring water."
             }
         };
 
